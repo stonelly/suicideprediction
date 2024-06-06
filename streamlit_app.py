@@ -19,9 +19,9 @@ def load_data():
 region_bins = {
     'Africa': 'Africa',
     'Asia': 'Asia',
-    'Central_South_America': 'Central_South_America',
+    'Central South America': 'Central_South_America',
     'Europe': 'Europe',
-    'North_America_Caribbean': 'North_America_Caribbean',
+    'North America Caribbean': 'North_America_Caribbean',
     'Oceania': 'Oceania'
 }
 
@@ -63,11 +63,10 @@ with st.form('predict'):
     submit = st.form_submit_button('Predict')
 
 if submit:
-    RegionName = int(label_encoder.transform([RegionName])[0])
+    RegionName = label_encoder.transform([RegionName])[0]
     Generation = generation_bins[Generation]
     Sex = sex_bins[Sex]
-    RegionName = region_bins[RegionName]
-    input_data = [[RegionName,Sex,  Generation, Population, GDP, GrossNationalIncome, InflationRate, EmploymentPopulationRatio]]
+    input_data = [[RegionName, Generation, Sex, Population, GDP, GrossNationalIncome, InflationRate, EmploymentPopulationRatio]]
     print("input_data:", input_data)
     prediction = model.predict(input_data)
     st.write("Predicted Sucide Rate:", round(prediction[0], 2))
