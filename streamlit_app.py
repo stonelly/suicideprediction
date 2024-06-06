@@ -6,9 +6,9 @@ from xgboost import XGBRegressor
 from sklearn.preprocessing import LabelEncoder
 
 # Page title
-st.set_page_config(page_title='Sucide Rate Prediction')
-st.title('Sucide Rate Prediction')
-st.info('This is a Sucide Rate prediction. Fill in the information and check the predicted suicide count below.')
+st.set_page_config(page_title='Sucide Count Prediction')
+st.title('Sucide Count Prediction')
+st.info('This is a Sucide Count prediction. Fill in the information and check the predicted suicide count below.')
 
 # Load data
 @st.cache_data
@@ -70,4 +70,4 @@ if submit:
     input_data = [[Sex, Generation, Population, GDP, GrossNationalIncome, InflationRate, EmploymentPopulationRatio]]
     print("input_data:", input_data)
     prediction = model.predict(input_data)
-    st.write("Predicted Sucide Rate:", round(prediction[0], 2))
+    st.write("Predicted Sucide Count:", round(prediction[0], 2))
