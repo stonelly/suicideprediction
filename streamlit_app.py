@@ -49,7 +49,7 @@ label_encoder.fit(data['RegionName'])
 
 # Train the model
 #model = joblib.load('suicide_count_prediction_model_RF.pkl')
-model = joblib.load('/scripts/suicide_count_prediction_model.pkl')
+model = joblib.load('./scripts/suicide_count_prediction_model.pkl')
 
 # Sucide Rate prediction form
 with st.form('predict'):
