@@ -13,8 +13,7 @@ Objectives:
 
 
 ## Data Sources
-- The Original source is from Real estate listings from [Mudah.my](https://www.mudah.my/malaysia/properties-for-rent#lm=1)
-- The dataset obtained from the Kaggle website titles “Rent Pricing Kuala Lumpur Malaysia”
+- The Original source is from WHO
 
 
 ## Setup
