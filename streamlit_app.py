@@ -63,7 +63,7 @@ with st.form('predict'):
     submit = st.form_submit_button('Predict')
 
 if submit:
-    RegionName = label_encoder.transform([RegionName])[1]
+    #RegionName = label_encoder.transform([RegionName])[1]
     Generation = generation_bins[Generation]
     Sex = sex_bins[Sex]
     input_data = [[Sex, Generation, Population, GDP, GrossNationalIncome, InflationRate, EmploymentPopulationRatio]]
