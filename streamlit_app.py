@@ -8,7 +8,7 @@ from sklearn.preprocessing import LabelEncoder
 # Page title
 st.set_page_config(page_title='Sucide Rate Prediction')
 st.title('Sucide Rate Prediction')
-st.info('This is a Sucide Rate prediction mainly based in KL & Selangor area. Fill in the information and check the predicted price below.')
+st.info('This is a Sucide Rate prediction. Fill in the information and check the predicted suicide count below.')
 
 # Load data
 @st.cache_data
@@ -19,9 +19,9 @@ def load_data():
 region_bins = {
     'Africa': 'Africa',
     'Asia': 'Asia',
-    'Central South America': 'Central_South_America',
+    'Central_South_America': 'Central_South_America',
     'Europe': 'Europe',
-    'North America Caribbean': 'North_America_Caribbean',
+    'North_America_Caribbean': 'North_America_Caribbean',
     'Oceania': 'Oceania'
 }
 
