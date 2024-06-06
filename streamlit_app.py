@@ -13,7 +13,7 @@ st.info('This is a Sucide Rate prediction mainly based in KL & Selangor area. Fi
 # Load data
 @st.cache_data
 def load_data():
-    return pd.read_csv('Data/cleaned_data.csv').copy()  # Make a copy of the DataFrame to avoid mutation
+    return pd.read_csv('/Data/cleaned_data.csv').copy()  # Make a copy of the DataFrame to avoid mutation
 
 # Define region bins
 region_bins = {
