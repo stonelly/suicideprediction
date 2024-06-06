@@ -67,7 +67,7 @@ if submit:
     Generation = generation_bins[Generation]
     Sex = sex_bins[Sex]
     RegionName = region_bins[RegionName]
-    input_data = [[RegionName, Generation, Sex, Population, GDP, GrossNationalIncome, InflationRate, EmploymentPopulationRatio]]
+    input_data = [[RegionName,Sex,  Generation, Population, GDP, GrossNationalIncome, InflationRate, EmploymentPopulationRatio]]
     print("input_data:", input_data)
     prediction = model.predict(input_data)
     st.write("Predicted Sucide Rate:", round(prediction[0], 2))
