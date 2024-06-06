@@ -57,7 +57,7 @@ def preprocess_and_train_model(data):
 
 
 # Load data
-data = pd.read_csv('./data/data_clean.csv').copy()
+data = pd.read_csv('../data/data_clean.csv').copy()
 model = preprocess_and_train_model(data)
 # Save the trained model
 joblib.dump(model, 'suicide_count_prediction_model.pkl')
