@@ -64,9 +64,10 @@ with st.form('predict'):
 
 if submit:
     #RegionName = label_encoder.transform([RegionName])[1]
+    RegionName = region_bins[RegionName]
     Generation = generation_bins[Generation]
     Sex = sex_bins[Sex]
-    input_data = [[Sex, Generation, Population, GDP, GrossNationalIncome, InflationRate, EmploymentPopulationRatio]]
+    input_data = [[RegionName,Sex, Generation, Population, GDP, GrossNationalIncome, InflationRate, EmploymentPopulationRatio]]
     print("input_data:", input_data)
     prediction = model.predict(input_data)
     st.write("Predicted Sucide Rate:", round(prediction[0], 2))
