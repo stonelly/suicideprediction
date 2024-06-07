@@ -45,7 +45,7 @@ generation_bins = {
 
 data = load_data()
 label_encoder = LabelEncoder()
-label_encoder.fit(data['RegionName'])
+label_encoder.fit(data['RegionName']) 
 #label_encoder.fit(data['CountryName'])
 
 # Train the model
