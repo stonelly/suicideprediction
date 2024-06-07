@@ -25,7 +25,7 @@ def preprocess_and_train_model(data):
 
     # Identify categorical and numerical columns
     categorical_cols = X.select_dtypes(include=['object']).columns
-    numerical_cols = X.select_dtypes(include=['int64', 'float64']).columns
+    numerical_cols = X.select_dtypes(include=['int32','int64', 'float64']).columns
 
     # Define the column transformer
     preprocessor = ColumnTransformer(
