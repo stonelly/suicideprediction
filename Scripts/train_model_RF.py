@@ -24,7 +24,7 @@ def preprocess_and_train_model(data):
 
     # Identify categorical and numerical columns
     categorical_cols = X.select_dtypes(include=['object']).columns
-    numerical_cols = X.select_dtypes(include=['int64', 'float64']).columns
+    numerical_cols = X.select_dtypes(include=['int32','int64', 'float64']).columns
 
     # Define the column transformer
     preprocessor = ColumnTransformer(
@@ -46,10 +46,9 @@ def preprocess_and_train_model(data):
     grid_search.fit(X_train, y_train)
 
     # Get the best hyperparameters
-    best_params = grid_search.best_params_
+    best_model = grid_search.best_estimator_
 
     # Train the model with the best hyperparameters
-    best_model = XGBRegressor(**best_params)
     best_model.fit(X_train, y_train)
 
     return best_model
