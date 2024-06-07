@@ -46,6 +46,7 @@ generation_bins = {
 data = load_data()
 label_encoder = LabelEncoder()
 label_encoder.fit(data['RegionName'])
+label_encoder.fit(data['CountryName'])
 
 # Train the model
 #model = joblib.load('suicide_count_prediction_model_RF.pkl')
@@ -54,6 +55,7 @@ model = joblib.load('Scripts/suicide_count_prediction_model.pkl')
 # Sucide Rate prediction form
 with st.form('predict'):
     RegionName = st.selectbox('Region', list(region_bins.keys()))
+    selected_country = st.selectbox('Country', data['CountryName'].unique())
     Generation = st.selectbox('Generation', list(generation_bins.keys()))
     Sex = st.selectbox('Sex',list(sex_bins.keys()))
     Population = st.number_input('Population')
@@ -66,6 +68,7 @@ with st.form('predict'):
 if submit:
     RegionName = region_bins[RegionName]
     RegionName = int(label_encoder.fit_transform([RegionName])[0])
+    CountryName = int(label_encoder.fit_transform([selected_country])[0])
     Generation = generation_bins[Generation]
     Sex = sex_bins[Sex]
     input_data = [[RegionName, Sex, Generation, Population, GDP, GrossNationalIncome, InflationRate, EmploymentPopulationRatio]]

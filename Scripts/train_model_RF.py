@@ -18,8 +18,9 @@ rf_param_grid = {
 def preprocess_and_train_model(data):
     label_encoder = LabelEncoder()
     data['RegionName'] = label_encoder.fit_transform(data['RegionName'])
+    data['CountryName'] = label_encoder.fit_transform(data['CountryName'])
 
-    X = data.drop(['SuicideCount', 'CountryName','Year','CauseSpecificDeathPercentage','DeathRatePer100K','GDPPerCapita','GNIPerCapita'], axis=1)
+    X = data.drop(['SuicideCount','Year','CauseSpecificDeathPercentage','DeathRatePer100K','GDPPerCapita','GNIPerCapita'], axis=1)
     y = data['SuicideCount']
 
     # Identify categorical and numerical columns
