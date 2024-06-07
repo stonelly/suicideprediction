@@ -71,7 +71,7 @@ if submit:
     CountryName = int(label_encoder.fit_transform([selected_country])[0])
     Generation = generation_bins[Generation]
     Sex = sex_bins[Sex]
-    input_data = [[RegionName, Sex, Generation, Population, GDP, GrossNationalIncome, InflationRate, EmploymentPopulationRatio]]
+    input_data = [[RegionName, CountryName, Sex, Generation, Population, GDP, GrossNationalIncome, InflationRate, EmploymentPopulationRatio]]
     print("input_data:", input_data)
     prediction = model.predict(input_data)
     st.write("Predicted Sucide Count:", round(prediction[0], 2))
